@@ -5,3 +5,7 @@
 app-root {
   font-family: 'Cairo', sans-serif;
 }
+
+.pointer {
+  cursor: pointer;
+}

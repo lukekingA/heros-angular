@@ -1,0 +1,15 @@
+li:hover {
+  text-shadow: 2px 2px 2px rgb(83, 83, 83);
+  border: 2px solid rgb(102, 102, 102);
+  border-radius: 3px;
+  background-color: rgb(255, 244, 231);
+}
+
+li>span:hover {
+  box-shadow: 2px 2px 2px rgb(83, 83, 83);
+}
+
+.selected {
+  border: 2px solid lightgray;
+  border-radius: 3px;
+}
