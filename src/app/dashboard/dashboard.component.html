@@ -1,3 +1,10 @@
-<p>
-  dashboard works!
-</p>
+<div class="row">
+  <div class="col col-sm-4 offset-sm-4">
+    <h3>Top Heros</h3>
+    <div class="row">
+      <div class="col">
+        <button class="btn bg-dark text-light m-1" *ngFor="let hero of heros">{{hero.name}}</button>
+      </div>
+    </div>
+  </div>
+</div>
