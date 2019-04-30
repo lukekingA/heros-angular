@@ -11,7 +11,9 @@ export class DashboardComponent implements OnInit {
   heros: Hero[];
 
   getHeros(): void {
-    this.heroService.getHeros().subscribe(heros => (this.heros = heros));
+    this.heroService
+      .getHeros()
+      .subscribe(heros => (this.heros = heros.slice(0, 4)));
   }
   constructor(private heroService: HeroService) {}
 
