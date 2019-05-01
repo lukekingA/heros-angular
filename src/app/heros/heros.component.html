@@ -1,12 +1,13 @@
 <div class="mt-2 text-center">
-  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
   <div>
     <h2>My Heros</h2>
     <div class="row">
       <div class="col col-sm-4 offset-sm-4">
         <ul>
-          <li class="d-flex justify-content-between align-items-center list-unstyled p-1 pointer"
-            *ngFor="let hero of heros" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+          <li routerLink="/details/{{hero.id}}"
+            class="d-flex justify-content-between align-items-center list-unstyled p-1 pointer"
+            *ngFor="let hero of heros">
             <span class="badge badge-primary badge-pill">{{hero.id}}</span> {{hero.name}}</li>
         </ul>
       </div>

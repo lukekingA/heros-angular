@@ -3,7 +3,8 @@
     <h3>Top Heros</h3>
     <div class="row">
       <div class="col">
-        <button class="btn bg-dark text-light m-1" *ngFor="let hero of heros">{{hero.name}}</button>
+        <button routerLink="/details/{{hero.id}}" class="btn bg-dark text-light m-1"
+          *ngFor="let hero of heros">{{hero.name}}</button>
       </div>
     </div>
   </div>
