@@ -12,7 +12,7 @@ export class HeroService {
     this.messageService.add('HeroService: fetched heros');
     return of(HEROS);
   }
-  getHero(id): Observable<Hero> {
+  getHero(id: number): Observable<Hero> {
     this.messageService.add('HeroService: fetched one hero');
     const hero: Hero = HEROS.filter(h => h.id === id)[0];
     return of(hero);

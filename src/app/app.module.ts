@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -12,8 +13,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HerosComponent, HeroDetailComponent, MessagesComponent, DashboardComponent, AboutComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HerosComponent,
+    HeroDetailComponent,
+    MessagesComponent,
+    DashboardComponent,
+    AboutComponent
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
