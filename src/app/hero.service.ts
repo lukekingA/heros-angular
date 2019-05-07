@@ -6,6 +6,10 @@ import { MessageService } from './message.service';
 import { Hero } from './hero';
 import { HEROS } from './mock-heros';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -34,10 +38,20 @@ export class HeroService {
     );
   }
   getHero(id: number): Observable<Hero> {
-    this.log('fetched one hero');
-    const hero: Hero = HEROS.filter(h => h.id === id)[0];
-    console.log(of(hero));
-    return of(hero);
+    return this.http
+      .get<Hero>(`${this.herosUrl}/${id}`)
+      .pipe(
+        tap(
+          _ => this.log(`fetched hero id:${id}`),
+          catchError(this.handleError<Hero>(`getHero id:${id}`))
+        )
+      );
+  }
+  updateHero(hero: Hero): Observable<any> {
+    return this.http.put(this.herosUrl, hero, httpOptions).pipe(
+      tap(_ => this.log(`updated hero id:${hero.id}`)),
+      catchError(this.handleError<Hero>(`updateHero`))
+    );
   }
   constructor(
     private http: HttpClient,
